@@ -1,0 +1,14 @@
+name: App web con Docker y Python
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  hola:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Saludo
+        run: |
+          echo "Hola mundo desde Github Actions!"
