@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, request
+
+from process import text_analysis
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Hola mundo desde Flask, somos la clase de Docker!"
+    return render_template("index.html")
+
+@app.route('/analizar', methods=['GET', 'POST'])
+def analizar():
+    text = request.form.get('text')
+    results = text_analysis(text)
+    return render_template("index.html", results=results)
 
 
 if __name__ == '__main__':
