@@ -6,4 +6,4 @@ run:
 
 test:
 	docker build -t app-web-tests .
-	docker run app-web-tests pytest --cov=app --cov-report term-missing --cov-fail-under=60
+	docker run app-web-tests pytest --cov=app --cov-report term-missing --cov-fail-under=75
