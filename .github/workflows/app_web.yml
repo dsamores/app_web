@@ -28,3 +28,11 @@ jobs:
       - name: Correr pruebas unitarias
         run: |
           make test
+  lint:
+    runs-on: ubuntu-latest
+    name: lint
+    steps:
+      - uses: actions/checkout@v3
+      - name: Correr formateo de codigo
+        run: |
+          make lint
